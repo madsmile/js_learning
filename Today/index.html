@@ -1,0 +1,31 @@
+<html>
+<head>
+<style>
+    body {
+        font-family: system-ui;
+        background: #f06d06;
+        color: white;
+        text-align: center;
+      }
+</style>
+</head>
+<body>
+<div id = "text">Today is:</div>
+<div id = "today" onload="today_is()">-</div>
+<script>
+  function today_is() {
+    let date = new Date(); 
+    var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+          
+    let today_is = date.toLocaleDateString('uk-UK', options)
+    //console.log(today_is);
+    document.getElementById("today").innerText = today_is; 
+}
+today_is();
+</script>
+<!-- 
+  //order matters due to page loading
+https://stackoverflow.com/questions/18239430/cannot-set-property-innerhtml-of-null
+-->
+</body>
+</html>
